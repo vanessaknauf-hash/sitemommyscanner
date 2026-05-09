@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mommy Scanner — Ingredientes seguros para você e seu bebê</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --ms-bg-dark: #1F1714;
+    --ms-bg-dark-2: #2A1F1C;
+    --ms-bg-cream: #F5EFEA;
+    --ms-bg-cream-2: #EFE6DF;
+    --ms-bg-pink: #F7E9E4;
+    --ms-rose: #D4A8A0;
+    --ms-rose-soft: #E5C7BF;
+    --ms-rose-deep: #B07A70;
+    --ms-green: #3F5840;
+    --ms-green-hover: #4A6750;
+    --ms-red: #A33A3A;
+    --ms-text-dark: #2A1F1C;
+    --ms-text-muted: #6B5A52;
+    --ms-text-light: #F5EFEA;
+    --ms-text-light-muted: rgba(245,239,234,0.65);
+    --ms-border: rgba(0,0,0,0.08);
+    --ms-border-dark: rgba(245,239,234,0.1);
+    --serif: "Cormorant Garamond", Georgia, serif;
+    --sans: "Inter", system-ui, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: var(--sans);
+    background: var(--ms-bg-cream);
+    color: var(--ms-text-dark);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  img { max-width: 100%; display: block; }
+  button { font-family: inherit; cursor: pointer; border: none; }
+  a { color: inherit; text-decoration: none; }
+
+  .ms-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .ms-container-narrow {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .ms-serif {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .ms-mono { font-family: var(--mono); }
+
+  /* CTA primário (verde, igual à referência validada) */
+  .ms-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--ms-green);
+    color: #fff;
+    padding: 18px 32px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: all .2s ease;
+    box-shadow: 0 4px 0 rgba(0,0,0,0.12), 0 8px 24px rgba(63,88,64,0.25);
+  }
+  .ms-cta:hover {
+    background: var(--ms-green-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 5px 0 rgba(0,0,0,0.12), 0 10px 28px rgba(63,88,64,0.35);
+  }
+  .ms-cta-arrow { transition: transform .2s ease; }
+  .ms-cta:hover .ms-cta-arrow { transform: translateX(4px); }
+
+  /* Seção spacing */
+  section { padding: 96px 0; }
+  @media (max-width: 768px) {
+    section { padding: 64px 0; }
+  }
+
+  /* Logo animada */
+  .ms-logo {
+    position: relative;
+    display: inline-block;
+    border-radius: 22%;
+    background: var(--ms-bg-dark);
+    overflow: hidden;
+  }
+  .ms-logo svg { display: block; width: 100%; height: 100%; }
+  .ms-logo .scan-line {
+    animation: scanMove 2.4s cubic-bezier(.45,0,.55,1) infinite;
+  }
+  @keyframes scanMove {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(48px); }
+    100% { transform: translateY(0); }
+  }
+
+  /* Badge */
+  .ms-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(212,168,160,0.14);
+    border: 1px solid rgba(212,168,160,0.4);
+    color: var(--ms-rose);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .ms-badge-light {
+    background: #fff;
+    border: 1px solid var(--ms-rose-soft);
+    color: var(--ms-rose-deep);
+  }
+
+  /* Loading state */
+  #ms-app {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+</head>
+<body>
+  <div id="ms-app">
+    <div style="font-family: var(--serif); font-style: italic; color: var(--ms-text-muted); font-size: 22px;">
+      Carregando…
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="components/logo.jsx"></script>
+  <script type="text/babel" src="components/phone-mock.jsx"></script>
+  <script type="text/babel" src="components/sections.jsx"></script>
+  <script type="text/babel" src="components/sections-2.jsx"></script>
+  <script type="text/babel" src="components/sections-3.jsx"></script>
+  <script type="text/babel" src="app.jsx"></script>
+</body>
+</html>
