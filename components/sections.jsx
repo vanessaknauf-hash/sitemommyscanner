@@ -117,7 +117,6 @@ function Hero({ checkoutUrl, ctaText }) {
           Aponte a câmera no código de barras e tenha a análise na hora na palma da mão.
         </p>
 
-        {/* phone — vídeo loop simulando o uso real */}
         <div style={{
           display: 'flex', justifyContent: 'center',
           marginBottom: 48,
@@ -125,7 +124,7 @@ function Hero({ checkoutUrl, ctaText }) {
           <PhoneVideo scale={0.82} />
         </div>
 
-        <a href={checkoutUrl || '#'} className="ms-cta">
+        <a href="#oferta" className="ms-cta">
           {ctaText || 'Quero meu acesso agora'}
           <span className="ms-cta-arrow">→</span>
         </a>
