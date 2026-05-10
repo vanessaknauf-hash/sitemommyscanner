@@ -113,10 +113,11 @@ function Hero({ checkoutUrl, ctaText }) {
           margin: '0 auto 40px',
           lineHeight: 1.55,
         }}>
-          Skincare, maquiagem, medicamentos, alimentos, suplementos.
+          Skincare, maquiagem, tinta de cabelo, esmalte, protetor solar, perfume, desodorante.
           Aponte a câmera no código de barras e tenha a análise na hora na palma da mão.
         </p>
 
+        {/* phone — vídeo loop simulando o uso real */}
         <div style={{
           display: 'flex', justifyContent: 'center',
           marginBottom: 48,
@@ -124,7 +125,7 @@ function Hero({ checkoutUrl, ctaText }) {
           <PhoneVideo scale={0.82} />
         </div>
 
-        <a href="#oferta" className="ms-cta">
+        <a href={checkoutUrl || '#'} className="ms-cta">
           {ctaText || 'Quero meu acesso agora'}
           <span className="ms-cta-arrow">→</span>
         </a>
@@ -172,7 +173,7 @@ function ThoughtBubbles() {
   const thoughts = [
     { side: 'left',  text: 'Esse creme aqui pode? Não sei se é seguro…' },
     { side: 'right', text: 'A bula tá em inglês, e agora?' },
-    { side: 'left',  text: 'Será que esse remédio passa pra ele?' },
+    { side: 'left',  text: 'Essa tinta de cabelo pode? E o esmalte?' },
     { side: 'right', text: 'Já usei isso ontem… será que fez mal?' },
   ];
   return (
@@ -246,7 +247,7 @@ function HowItWorks() {
       n: '01',
       icon: 'camera',
       title: 'Escaneie',
-      desc: 'Aponte a câmera no código de barras de qualquer produto — cosmético, remédio, alimento ou suplemento.',
+      desc: 'Aponte a câmera no código de barras de qualquer produto — cosmético, maquiagem, tinta de cabelo, esmalte, protetor solar, perfume ou desodorante.',
     },
     {
       n: '02',
