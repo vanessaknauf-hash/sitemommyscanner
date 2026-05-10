@@ -2,14 +2,14 @@
 
 function WhatYouScan() {
   const cats = [
-    { icon: '🧴', label: 'Skincare',     items: 'Cremes, séruns, ácidos, retinol' },
-    { icon: '💄', label: 'Maquiagem',    items: 'Bases, batons, máscaras' },
-    { icon: '💊', label: 'Medicamentos', items: 'Analgésicos, antibióticos, vitaminas' },
-    { icon: '🥗', label: 'Alimentos',    items: 'Industrializados, conservas, queijos' },
-    { icon: '🌿', label: 'Suplementos',  items: 'Ômega, ferro, complexos vitamínicos' },
-    { icon: '🧼', label: 'Higiene',      items: 'Sabonetes, perfumes, desodorantes' },
-    { icon: '☀️', label: 'Solar',        items: 'Filtros químicos vs físicos' },
-    { icon: '💅', label: 'Esmaltes',     items: 'Tolueno, formol, removedores' },
+    { icon: '🧴', label: 'Skincare',       items: 'Cremes, séruns, ácidos, retinol' },
+    { icon: '💄', label: 'Maquiagem',      items: 'Bases, batons, máscaras, blush' },
+    { icon: '🎨', label: 'Tinta de cabelo',items: 'Colorações, descolorantes, tônicos' },
+    { icon: '💅', label: 'Esmaltes',       items: 'Tolueno, formol, removedores' },
+    { icon: '☀️', label: 'Solar',          items: 'Filtros químicos vs físicos' },
+    { icon: '🌿', label: 'Suplementos',    items: 'Ômega, ferro, complexos vitamínicos' },
+    { icon: '🧼', label: 'Higiene',        items: 'Sabonetes, perfumes, desodorantes' },
+    { icon: '✨', label: 'Corpo',          items: 'Óleos, manteigas, loções corporais' },
   ];
   return (
     <section style={{ background: 'var(--ms-bg-cream-2)' }}>
@@ -152,19 +152,7 @@ function DemoCards() {
           copy="Aquele produto que você usava antes de engravidar e ficou na dúvida se pode continuar? O app te avisa imediatamente: evitar. E mostra o porquê — em linguagem que você entende, sem termo técnico."
           screenshot="assets/screen-retinol.png"
         />
-        <DemoRow
-          status="caution"
-          title="O remédio que a farmácia liberou sem perguntar"
-          copy="Dor de cabeça, gripe, azia… você toma sem pensar. O app revisa cada princípio ativo e te diz se é categoria A, B, C ou D para gestação — com a recomendação do que você deve fazer."
-          screenshot="assets/screen-dipirona.png"
-          brand="DIPIRONA"
-          productName="Dipirona sódica 500mg"
-          reasons={[
-            { ok: false, text: 'Categoria C no 3º trimestre' },
-            { ok: true, text: 'Pode ser usada no 1º e 2º trimestre' },
-            { ok: true, text: 'Dose máxima: 500mg/dia' },
-          ]}
-        />
+      
       </div>
       <style>{`
         @media (max-width: 800px) {
@@ -269,7 +257,6 @@ function ForWho() {
     'Cansou de pesquisar no Google e chegar em respostas contraditórias.',
     'Já gastou dinheiro com cosméticos que agora não sabe se pode usar.',
     'Quer continuar se cuidando — com pele bonita, autoestima alta — sem pôr o bebê em risco.',
-    'Tem receita médica nova e quer conferir se aquele remédio é mesmo seguro.',
   ];
   return (
     <section style={{ background: 'var(--ms-bg-pink)' }}>
