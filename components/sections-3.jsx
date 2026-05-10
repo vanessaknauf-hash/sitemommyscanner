@@ -459,7 +459,7 @@ function FAQ() {
   const faqs = [
     {
       q: 'Como funciona o escaneamento?',
-      a: 'Você abre o app, aponta a câmera no código de barras do produto, e em segundos recebe a análise. Funciona com cosméticos, medicamentos, alimentos e suplementos.',
+      a: 'Você abre o app, aponta a câmera no código de barras do produto, e em segundos recebe a análise. Funciona com cosméticos, maquiagem, tinta de cabelo, esmalte, protetor solar, perfume, desodorante e suplementos.',
     },
     {
       q: 'Preciso baixar na loja de aplicativos?',
