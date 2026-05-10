@@ -286,7 +286,7 @@ function Offer({ checkoutUrl, ctaText }) {
               'Mais de 15.000 produtos já catalogados',
               'Análises da Equipe Médica',
               'Atualização semanal do banco de dados',
-              'Cosméticos, remédios, alimentos e suplementos',
+              'Cosméticos, maquiagem, tinta de cabelo, esmalte, protetor solar e mais',
               'Disponível 24h, na palma da sua mão',
             ].map((t, i) => (
               <li key={i} style={{ display: 'flex', gap: 10, fontSize: 15, color: 'var(--ms-text-dark)' }}>
@@ -300,6 +300,31 @@ function Offer({ checkoutUrl, ctaText }) {
               </li>
             ))}
           </ul>
+
+          {/* Bônus */}
+          <div style={{
+            margin: '0 0 24px',
+            padding: '20px 24px',
+            background: 'linear-gradient(135deg, #fdf6f2 0%, #f7f0ea 100%)',
+            borderRadius: 14,
+            border: '1.5px dashed var(--ms-rose)',
+            textAlign: 'left',
+          }}>
+            <div style={{
+              display: 'inline-flex', alignItems: 'center', gap: 6,
+              padding: '4px 10px', borderRadius: 999,
+              background: 'var(--ms-rose)', color: '#fff',
+              fontSize: 10, fontWeight: 700, letterSpacing: '0.1em',
+              textTransform: 'uppercase', marginBottom: 10,
+            }}>🎁 Bônus exclusivo · vagas limitadas</div>
+            <div style={{ fontWeight: 700, fontSize: 16, color: 'var(--ms-text-dark)', marginBottom: 6 }}>
+              Grupo VIP de Dúvidas com a Dra. Vanessa
+            </div>
+            <div style={{ fontSize: 14, color: 'var(--ms-text-muted)', lineHeight: 1.6 }}>
+              Toda sexta-feira, por 1 hora, a Dra. Vanessa abre o grupo para responder suas dúvidas ao vivo.
+              Acesso direto à dermatologista — sem fila, sem consulta, sem custo extra.
+            </div>
+          </div>
 
           <div style={{
             padding: '24px 24px',
@@ -475,7 +500,7 @@ function FAQ() {
     },
     {
       q: 'O app substitui a consulta com meu médico?',
-      a: 'Não. O Mommy Scanner é uma ferramenta de apoio para decisões do dia a dia — saber se aquele creme, alimento ou suplemento é seguro. Para diagnósticos, prescrições e dúvidas clínicas, sempre consulte seu obstetra ou dermatologista.',
+      a: 'Não. O Mommy Scanner é uma ferramenta de apoio para decisões do dia a dia — saber se aquele creme, sérum, maquiagem ou protetor solar é seguro. Para diagnósticos, prescrições e dúvidas clínicas, sempre consulte seu obstetra ou dermatologista.',
     },
     {
       q: 'Em qual fase da gestação posso usar?',
@@ -500,6 +525,10 @@ function FAQ() {
     {
       q: 'E se eu não gostar?',
       a: 'Você tem 7 dias para testar com calma. Se sentir que não é pra você, é só mandar um e-mail e devolvemos 100% do valor. Sem letra miúda.',
+    },
+    {
+      q: 'Como funciona o Grupo VIP de Dúvidas?',
+      a: 'Toda sexta-feira a Dra. Vanessa abre o grupo por 1 hora para responder dúvidas ao vivo. É um bônus exclusivo para quem adquirir o Mommy Scanner enquanto houver vagas disponíveis. O acesso ao grupo é válido durante os seus 6 meses de assinatura.',
     },
   ];
   return (
